@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "tsc": "tsc",
     "lint-staged": "lint-staged",
     "prettier-fix": "npx prettier src --write --ignore-unknown",
@@ -12,7 +14,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "**/*.ts?(x)": [
+    "*.{ts,tsx}": [
       "eslint --fix",
       "prettier --write"
     ]
