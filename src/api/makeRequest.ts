@@ -1,4 +1,4 @@
-import {CuratedPhotosResponseType} from './types';
+import {CuratedPhotosResponseType, PhotoType} from './responseTypes';
 
 const url = 'https://api.pexels.com/v1';
 
@@ -26,4 +26,8 @@ export function getCuratedPhotos({page = 1}) {
   return makeRequest<CuratedPhotosResponseType>(
     `/curated?page=${page}&per_page=30`,
   );
+}
+
+export function getPhoto(id: number) {
+  return makeRequest<PhotoType>(`/photos/${id}`);
 }

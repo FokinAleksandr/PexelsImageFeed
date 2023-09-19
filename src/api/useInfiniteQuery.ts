@@ -1,12 +1,11 @@
 import React from 'react';
 import {unstable_batchedUpdates} from 'react-native';
+import {StatusType} from './responseTypes';
 
 type ParamsType<FetchResult, PageParam> = {
   queryFn: (param?: PageParam) => Promise<FetchResult>;
   getNextPageParam: (arg: FetchResult) => PageParam | undefined;
 };
-
-type StatusType = 'success' | 'loading' | 'error';
 
 export function useInfiniteQuery<FetchResult, PageParam>({
   queryFn,

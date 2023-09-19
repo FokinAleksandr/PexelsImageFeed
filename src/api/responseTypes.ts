@@ -27,3 +27,5 @@ export type PhotoType = {
   liked: boolean;
   alt: string;
 };
+
+export type StatusType = 'success' | 'loading' | 'error';
